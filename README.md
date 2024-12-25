@@ -1,0 +1,2 @@
+# GoatCoin
+ Goat Coin Platform
