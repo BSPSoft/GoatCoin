@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="dist/style.css">
+
+  <!-- FONT GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+   <!-- web3 -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+
+  <title>Goat Coin Home</title>
+  
+  <style>
+    #connectMetamaskMethod{
+      padding: 5px;
+      border:0.4px solid #122;
+      border-radius: 10px;
+      background-color: green;
+      color: #fff;
+      font-size: 1em;
+      font-weight: 300;
+      cursor: pointer;
+    }
+    .hiddenDashboard{
+      display: none;
+    }
+
+    .alert {
+     margin: 1em;
+     padding: 10px;
+     color: #fff;
+     opacity: 0.8;
+     font-size: 1em;
+     border-radius: 5px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+    }
+    .alert button{
+      background-color: transparent;
+      border:none;
+      padding: 5px;
+      cursor: pointer;
+    }
+    .alert button:hover{
+      color: #000;
+      background-color: #ccc;
+    }
+
+    .alert-success{
+      background-color: green;
+    }
+    .alert-danger{
+      background-color: rgb(180, 82, 82);
+    }
+    .hiddenAlert{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <img src="images/bg-1.jpg" alt="bg" class="bg-dark">
+    <span>GOAT <code>COIN</code></span>
+    <div class="navbar">
+      <a href="#about">About Coin</a>
+      <a href="#trading">Trading</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#notifications">Notifications</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#whygoat">Why Goat</a>
+      <a href="#dashboard" style="color:#122">Coin Dashboard</a>
+      <button id="btnShoMenu">=</button>
+    </div>
+    
+    <img src="images/Goat.webp" alt="Goat" width="200" class="icon-goat">
+    
+    <div class="hero">
+      <h1>GOAT Coin</h1>
+      <p>Your gateway to the future of digital finance</p>
+      <a href="#about" class="cta-button" onclick="connectContracts()">Learn More</a>
+    </div>
+  </header>
+  <!--// header //-->
+  
+  <!-- Container -->
+  <div class="container">
+    
+    <!-- about  -->
+    <div class="about" id="about">
+      <h2>About GOAT Coin</h2>
+      <p>
+       GOAT Coin: <code>Empowering E-commerce Solutions</code>  <br><br>
+       <center>
+         <span>
+          <code>GOAT Coin</code> is a digital token designed for showcasing on our platform, 
+         enabling customers to easily purchase and utilize it within our ecosystem. <br>
+         Currently tailored for display and transactions, 
+         <code>GOAT Coin</code> offers a seamless payment solution with the potential to be adopted as a dedicated currency for specific goods or services in the near future. <br> 
+         Simplify your payments and explore the future of e-commerce with <code>GOAT Coin</code>.
+         </span>
+       </center>
+      </p>
+    </div>
+    <!--// about  //-->
+    
+    <!-- features  -->
+    <div class="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>
+          <span>
+           Built on the Binance Smart Chain (BSC): 
+          </span>
+          <code>GOAT Coin</code> leverages the speed, scalability,
+          and cost-effectiveness of the BSC network, 
+          ensuring fast and reliable transactions with minimal fees.
+        </li>
+        <li>
+          <span>
+           Seamless Integration with MetaMask:
+          </span>
+           Customers can easily purchase <code>GOAT Coin</code> using BNB directly from their MetaMask wallet. 
+           The setup is straightforward, enabling smooth transactions for both new and experienced users.
+        </li>
+        <li>
+          <span>
+           Future Utility:
+          </span>
+           Beyond just showcasing and purchasing,
+           <code>GOAT Coin</code> is designed to evolve into a versatile currency for buying specific goods and services on the platform,
+           making it a cornerstone of the ecosystem.
+        </li>
+        <li>
+          <span>
+           Secure and Transparent: 
+          </span>
+           Operating on blockchain technology,
+           <code>GOAT Coin</code> ensures high levels of security and transparency,
+           giving users confidence in every transaction. 
+        </li>
+      </ul>
+      <p>With these features, <code>GOAT Coin</code> is more than just a token—it’s a bridge to efficient, blockchain-powered commerce.</p>
+    </div>
+    <!--// features  //-->
+    
+    <!-- Notifications -->
+    <div class="notifications" id="notifications">
+        <h2>Notifications</h2>
+        <p>
+         <strong>Notice</strong>: <br>
+          The <code>GOAT Coin</code> will soon be listed on additional trading platforms such as <code>Uniswap</code> ,<code>Binance</code> , and <code>Coinbase</code> ,
+          enabling users to purchase and trade it seamlessly . <br><br> 
+          Stay tuned for further updates!
+        </p>
+    </div>
+    <!--// Notifications  //-->
+    
+    <!-- coin trading  -->
+    <div class="trading" id="trading">
+      <h2>GOAT Coin Trading Section</h2>
+      <div class="coinInfo">
+        <span id="metamaskStutes">You are connected to the <code>Metamask wallet</code> .</span> <button id="connectMetamaskMethod">Connect Wallet</button>  <br><br>
+        <span>At the moment there is a <code>GOAT</code> currency that is equal to a number: <strong id="countGoat">0</strong> <small>GOAT</small></span> <br><br>
+        <span>Currency price now : <strong  class="rate">0.01</strong> <small>BNB</small></span>
+      </div>
+      
+      <div class="coinBuy">
+        <div class="coinBuyheader">
+          <img src="images/Bnb1.png" alt="BNB" width="50">
+          <span>BNB</span>
+        </div>
+        <input type="number" name="amountBnb" placeholder="0.0 BNB" id="BNBCoin" step="0" min="0">
+        <div class="coinBuyheader">
+          <img src="images/Goat.webp" alt="BNB" width="50">
+          <span>GOAT</span>
+        </div>
+        <input type="number" name="amountGoat" placeholder="0.0 GOAT" id="GOATCoin" step="0" min="0">
+        
+        <button id="btnBuy">Buy</button>
+        <div class="areaAlert-coinBuy"></div>
+      </div>
+    </div>
+    <!--// coin trading  //-->
+    
+    <!-- roadmap -->
+    <div class="roadmap" id="roadmap">
+      <h2>Roadmap</h2>
+      <details>
+        <summary>Q1: How to buy a GOAT coin ?</summary>
+        <ul>
+          <li>Install the MetaMaskk wallet .</li>
+          <li>Connect to BSC <code>Binance Smart Chain</code> Network and get BNB .</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Q2: How to display the GOAT coin inside the wallet ?</summary>
+        <ul>
+          <li>Buy currency from this platform .</li>
+          <li>Go to the address where you bought <code>GOAT</code> coin inside the MetaMask wallet .</li>
+          <li>In the <code>Tokens</code> section, choose to <code>import tokens</code> .</li>
+          <li>Paste this address in the appropriate field :</li>
+          <li><code id="tokenAddress">0x3fgxfhvhhftgfdrsdhvgujbff355</code></li>
+        </ul>
+      </details>
+      
+        <!-- roadmap => contact us-->
+         <div class="contact" id="contact">
+          <h2>Contact Us</h2>
+          <div class="contact-card">
+            <form action="#" method="get">
+              <input type="text" placeholder="Name" required>
+              <input type="email" placeholder="Email" required>
+              <textarea name="areaNote" id="areaNote" cols="10" rows="5" placeholder="Message"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+            <div class="linked">
+               <div class="linked-title">You can connect us on one of our social media accounts.</div>
+               <ul>
+                  <li>Facebook <img src="images/ent_facebook_with_circle.png" alt="not"></li>
+                  <li>Telegram <img src="images/faw_telegram.png" alt="not"></li>
+                  <li>Whatsapp <img src="images/ion_social_whatsapp.png" alt="not"></li>  
+                  <li>Linked In<img src="images/ent_linkedin_with_circle.png" alt="not"></li>
+               </ul>
+              </div>
+          </div>
+         </div>
+        <!--// roadmap => contact us //-->
+      
+         <hr style="max-width:50%; margin:10px auto;">
+         <hr style="max-width:60%; margin:10px auto;">
+         <hr style="max-width:80%; margin:10px auto;">
+    
+    </div>
+    <!--// roadmap  //-->
+    
+
+    <br><br>
+    
+    <!-- hiddenDashboard -->
+    <!--coin Management dashboard  -->
+    <div class="dashboard" id="dashboard">
+      <h1>GOAT Coin Management Dashboard</h1>
+      <div class="card-dashboard">
+        <div class="card-head">
+          <div class="card-head-info">
+             <img src="images/User.png" alt="Owner" width="50" style="background-color: #a57453;">
+             <p style="min-width:50%;word-wrap: break-word;">
+                <strong>Owner :</strong> <span id="ownerAddress"></span>
+                <br>
+                <strong>Balance :</strong> <span id="balanceOwner">0</span> GOAT
+             </p>
+          </div>
+          <div class="card-head-info">
+            <img src="images/Goat.webp" alt="GOAT" width="50">
+             <p style="min-width:50%;word-wrap: break-word;">
+              <strong>Total Supply : </strong> <span class="totalSupply">0</span> Tokens 
+              <br>
+              <strong>Allowed count : </strong> <span id="allowedCount">0</span> GOAT 
+              <br>
+              <strong>Price :    </strong><span class="rate">0.01</span> BNB
+            </p>
+          </div>
+        </div>
+        <hr style="width: 70%; margin: 1em auto;">
+
+        <div class="card-body">
+          <h3>Change Token Price</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="Price">Price (BNB)</label>
+              <input type="number" name="priceBnb" placeholder="0.0 BNB" id="priceBnb" step="0" min="0">
+            </div>
+            <button id="changePriceMethod">Update</button>
+            <div class="areaAlert-price"></div>
+          </div>
+
+          <h3>Transfer the Token to a specific address</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="address">address</label>
+              <input type="text" name="address" placeholder="0x0000000000000000" id="addressSpecific" >  
+            </div>
+            <div class="input-group">
+              <label for="Amount">Amount</label>
+              <input type="number" name="balanceGoat" placeholder="1.0 GOAT" id="balanceGoat" step="1" min="1">
+            </div>
+            <button id="transferAddressMethod">Transfer</button>
+            <div class="areaAlert-transfer"></div>
+          </div>
+
+
+          <h3>Balance Of Account</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="balanceAccount">address  </label>
+              <input type="text" name="balanceAccount" placeholder="0x0000000000000000" id="balanceAccount" >  
+            </div>
+            <button id="balanceOfMethod">BalanceOf</button>
+            <span id="balanceValue">0.0 GOAT</span>
+          </div>
+
+
+
+          <h3>Create Extra Tokens ( Mint Tokens )</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="amountMint">Amount to Mint</label>
+              <input type="number" name="amountMint" placeholder="1 GOAT" id="amountMint" step="1" min="1">
+            </div>
+            <button id="tokensMintMethod">Mint</button>
+            <div class="areaAlert-mint"></div>
+
+          </div>
+
+          <h3>Burn Tokens</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="amountBurn">Amount to Burn</label>
+              <input type="number" name="amountBurn" placeholder="1 GOAT" id="amountBurn" step="1" min="1">
+            </div>
+            <button id="tokensBurnMethod">Burn</button>
+            <div class="areaAlert-burn"></div>
+
+          </div>
+
+          <h3>Account purchases</h3>
+          <div class="action">
+            <div class="input-group">
+              <label for="accountPurch">account</label>
+              <input type="text" name="accountPurch" placeholder="0x0000000000000000" id="accountPurch" >  
+            </div>
+            <button id="getAccountPurchasesMethod">Get Purchases</button>
+            <span id="purchasedValue">0.0 GOAT</span>
+
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <h2>Approval steps</h2>
+          <div class="action approve">
+            <div class="input-group">
+              <label for="poolAddress">Pool Address</label>
+              <input type="text" name="poolAddress" placeholder="0x0000000000000000" id="poolAddress" readonly >  
+            </div>
+            <div class="input-group">
+              <label for="amountAllow">The amount you allow</label>
+              <input type="number" name="amountAllow" placeholder="1 GOAT" id="amountAllow" step="1" min="1">
+            </div>
+            <button id="approveMethod">Approve</button>
+            <span style="color: #123;min-width:50%;word-wrap: break-word;">Pool Address : <code class="poolAddress">0x3fgxfhvhhftgfdrsdhvgujbf5</code></span>
+            <div class="areaAlert-approve"></div>
+          </div>
+
+          <div class="action deposite">
+            <div class="input-group">
+              <label for="amountAllowed">The amount allowed</label>
+              <input type="number" name="amountAllowed" placeholder="1 GOAT MAX" id="amountAllowed" step="1" min="1" readonly>
+            </div>
+            <button id="depositeMethod">Deposite</button>
+            <div class="areaAlert-deposite"></div>
+          </div>
+
+          <span>------------------------------------------</span><br>
+          <p><strong>Balance Of Pool Address :</strong> <span style="color: red;" id="balancePoolContract">0 BNB</span></p> <br>
+          <button id="btn-withdraw">Withdraw BNB</button>
+          <div class="areaAlert-withdraw"></div>
+
+          <span>------------------------------------------</span><br>
+          <button id="btn-toggleSaleStatus">Change the purchase status</button>
+          <div class="areaAlert-toggleSaleStatus"></div>
+          <span>Sale is <code id="purchaseStatus">true</code></span>
+          <div class="areaAlert-toggleSaleStatus"></div>
+           
+          <br>
+          <span>------------------------------------------</span><br>
+          <div class="purchased-table  table-responsive">
+            <button id="btn-refresh">Refresh</button>
+            <table class="table-responsive">
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>purchased Value</th>
+                </tr>
+              </thead>
+              <tbody id="table-purchases">
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+      
+      
+        </div>
+
+
+
+      </div>
+    </div>
+    <!--// coin Management dashboard  //-->
+
+    
+    
+  </div>
+  <!--// Container //-->
+  
+  
+  <!-- newsletter -->
+
+  <!--
+  <div class="newsletter" id="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+  </div>  -->
+  
+  <!-- why goat -->
+  <div class="whyGoat" id="whygoat">
+   <h2>Why GOAT?</h2> 
+    <p>
+     <code>GOAT</code> is a promising new cryptocurrency that is still in its early stages of development. <br>
+       While it may not yet have a large community or widespread adoption, 
+       its simplicity and focus on growth make it an exciting opportunity for early adopters. <br>
+        As a fresh project, <code>GOAT</code> aims to build trust and value over time through consistent development and gradual expansion into trading platforms.
+        By getting involved now, you become part of the foundation of a currency that aspires to grow and evolve in the world of decentralized finance. <br>
+       <code>GOAT</code> represents a chance to support an emerging project with potential for the future. <br>
+       <br>
+       Stay tuned as we take the first steps toward building something meaningful!
+    </p>
+  </div>
+  <!--// newsletter //-->
+
+
+   
+  
+  <!-- footer -->
+  <footer>
+      <p>© 2024 GOAT Coin. All rights reserved.</p>
+      <p>Follow us on:
+        <a href="#">Twitter</a> | <a href="#">Telegram</a> | <a href="#">LinkedIn</a>
+      </p>
+      <span>Development was done by <code>BSP Soft</code></span>
+  </footer>
+  <!--// footer //-->
+  
+  
+
+   <script>
+     const btnShowMenu=document.getElementById("btnShoMenu");
+     const navBar=document.querySelector(".navbar");
+     
+     btnShowMenu.addEventListener('click',()=>{
+       navBar.classList.toggle('show');
+     });
+
+   
+   </script>
+
+   <!-- script coonect backend -->
+    <script>
+      const getVariables=async ()=>{
+        const Response=await fetch('/get');
+        if(!Response.ok){
+          throw new Error('no Response '+Response.status);
+          return;
+        }
+        const data=await Response.json();
+
+        console.log('data in backend'+data);
+      }
+      // getVariables();
+    </script>
+
+ <!-- connect Metamask -->
+ <script>
+   window.addEventListener('load',function(){
+
+        let contractToken;
+        let contractPool;
+
+
+        let currentAccount;
+        let Owner="0xB67028bd1F150f9e208A9EfC8Ca708c84BABDc4C";
+        const addressToken="0xa5881B838321093d1b9196Dc73D153F34c70ddb4";
+        const addressPool="0xDBe4926fAcc68818338032CAab66298BF0694403";
+        
+        
+      // connect metaMask
+      const connectMetamask=async ()=>{
+           if(typeof this.window.ethereum !="undefined")
+              {
+                try
+                { 
+                  
+                 await window.ethereum.request({method:"eth_requestAccounts"})
+                .then(accounts =>{
+                  // console.log(accounts);
+                  currentAccount=accounts[0];
+
+                  document.getElementById('metamaskStutes').innerHTML='You are connected to the <code>Metamask wallet</code>';
+                  document.getElementById('tokenAddress').innerHTML=addressToken;
+
+                  // chack account this is Owner => visible dashboard
+                if(Owner.toLowerCase() != currentAccount){
+                        document.getElementById('dashboard').classList.add('hiddenDashboard');
+                  }
+                }).catch(error=>{
+                  console.error(error.message)
+                  document.getElementById('metamaskStutes').innerHTML='You are not connected to the <code>Metamask wallet</code>';
+                  
+                });
+              
+                }catch(ex){console.log(ex);}
+                
+
+              }else{
+                document.getElementById('metamaskStutes').innerHTML='You are not connected to the <code>Metamask wallet</code>';
+
+              }
+        }
+
+       setInterval(connectMetamask,1000);
+       
+    
+        // connect contract 
+        const connectContracts=async()=>{
+         const  abiToken=await getAbiTokensContract();   
+         const  abiPool=await getAbiPoolContract();
+
+         window.web3=await new Web3(window.ethereum);
+         contractToken=await new window.web3.eth.Contract(abiToken,addressToken);
+         contractPool=await new window.web3.eth.Contract(abiPool,addressPool);
+
+         if(!contractToken ||  !contractPool){
+          alert('no connetct Contracts');
+          return;
+         }
+
+         console.log(abiToken);
+
+         const OwnerAddress=await contractToken.methods.Owner().call();
+
+         let rateValue=0.01;
+         let AllowncCountValue=0;
+         // action time 
+         const actionsTime=async()=>{
+            // console.log(currentAccount);
+            // console.log(OwnerAddress.toLowerCase());
+
+              // get Rate (price)
+              const rate=await contractPool.methods.getRate().call();
+                    rateValue= window.web3.utils.fromWei(rate,'ether');
+             
+              // count allowenc tokens 
+              const AllowncCount=await contractPool.methods.getAccountBalances(addressPool).call();
+                    AllowncCountValue= window.web3.utils.fromWei(AllowncCount,'ether');
+
+             // chack account this is Owner => visible dashboard
+             if(OwnerAddress.toLowerCase() != currentAccount){
+                    document.getElementById('dashboard').classList.add('hiddenDashboard');
+
+                    // AllowncCountValue
+                    document.getElementById('countGoat').innerHTML=AllowncCountValue;
+                    // rate
+                    document.getElementsByClassName('rate')[0].innerHTML=rateValue;
+
+                    return;
+              }else{
+                    document.getElementById('dashboard').classList.remove('hiddenDashboard');
+              }
+
+             document.getElementById('ownerAddress').innerHTML=OwnerAddress;
+
+             // get balanceOwner
+            const balanceOwner=await contractPool.methods.getAccountBalances(OwnerAddress).call();
+            const balanceOwnerValue=await window.web3.utils.fromWei(balanceOwner,'ether')
+            document.getElementById('balanceOwner').innerHTML=balanceOwnerValue;
+            
+            //get totalsupply   
+            const totalSupply=await contractToken.methods.totalSupply().call();
+            const totalSuppylValue=await window.web3.utils.fromWei(totalSupply,'ether')
+            document.querySelector('.totalSupply').innerHTML=totalSuppylValue;
+            
+              //AllowncCountValue
+              document.getElementById('countGoat').innerHTML=AllowncCountValue;
+              document.getElementById('allowedCount').innerHTML=AllowncCountValue;
+
+              // rate
+              document.getElementsByClassName('rate')[0].innerHTML=rateValue;
+              document.getElementsByClassName('rate')[1].innerHTML=rateValue;
+
+              // get pool address
+              document.getElementById('poolAddress').value=addressPool.toLowerCase();
+              document.querySelector('.poolAddress').innerHTML=addressPool.toLowerCase();
+
+          
+
+              // get balance of contract pool
+              const balancePoolContract=await contractPool.methods.getContractBalances().call();
+              const balancePoolContractValue=await window.web3.utils.fromWei(balancePoolContract,'ether');
+              document.getElementById('balancePoolContract').innerHTML=balancePoolContractValue +' BNB';
+
+              // get sale status 
+                 const isSaleActive=await contractPool.methods.isSaleActive().call();
+                     document.getElementById('purchaseStatus').innerHTML=isSaleActive;
+
+            }
+        
+
+        setInterval(actionsTime,1000); // this is value update more
+
+
+            // balanceOfMethod
+           document.getElementById('balanceOfMethod').addEventListener('click',async()=>{
+                const balanceAccount=document.getElementById('balanceAccount').value.toLowerCase();
+                 if(balanceAccount==='') return;
+
+                const balanceOf=await contractToken.methods.balanceOf(balanceAccount).call();
+                const balanceOfValue=await window.web3.utils.fromWei(balanceOf,'ether');
+                document.getElementById('balanceValue').innerHTML=balanceOfValue+" GOAT";
+                console.log('balance',balanceOf);  
+            });
+
+
+            //approveMethod
+           document.getElementById('approveMethod').addEventListener('click',async()=>{
+             const amountAllow=document.getElementById('amountAllow').value;
+             if(amountAllow==='' || amountAllow <=0) return;
+             
+             const amountAllowValue=await window.web3.utils.toWei(amountAllow,'ether');
+             await contractToken.methods.approve(addressPool,amountAllowValue)
+             .send({from:OwnerAddress})
+             .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p>This was done successfully. <br><code> Deposit the value that allowed</code>. </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-approve\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-approve').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng , Make sure that you are the owner and carry enough credit .<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-approve\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-approve').innerHTML=html;
+             });
+            
+             // get amount allowance
+              const amountAllownce=await contractToken.methods.allowance(OwnerAddress,addressPool).call();
+              const amountAllownceValue=await window.web3.utils.fromWei(amountAllownce,'ether');
+              document.getElementById('amountAllowed').value=amountAllownceValue;
+              
+           });
+
+
+           // depositeMethod
+           document.getElementById('depositeMethod').addEventListener('click',async()=>{
+            const amountAllowed=document.getElementById('amountAllowed').value;
+            const amountAllowedValue=await window.web3.utils.toWei(amountAllowed,'ether');
+           
+            console.log('amountAllowedValue ',amountAllowedValue)
+            await contractPool.methods.deposit(amountAllowedValue)
+            .send({from:OwnerAddress})
+            .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p>The allowed value has been deposited into the Pool contract. <br> this value represents the true amount of this <code>GOAT Coin</code> that customers can purchase . </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-deposite\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-deposite').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng , Make sure that you are the owner and carry enough credit .<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-deposite\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-deposite').innerHTML=html;
+             });
+           });
+
+
+
+           // create tokens (mint)
+           document.getElementById('tokensMintMethod').addEventListener('click',async()=>{
+             const amountMint=document.getElementById('amountMint').value; 
+             if(amountMint==='' || amountMint <=0) return;
+                         
+             await contractToken.methods.mintTokens(amountMint)
+             .send({from:OwnerAddress})
+             .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p> <code>'+amountMint+'</code> new GOAT Coin has been created successfully. </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-mint\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-mint').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng , Make sure that you are the owner and carry enough credit .<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-mint\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-mint').innerHTML=html;
+             })
+           });
+
+           // Burn tokens
+           document.getElementById('tokensBurnMethod').addEventListener('click',async()=>{
+             const amountBurn=document.getElementById('amountBurn').value; 
+             if(amountBurn==='' || amountBurn <=0) return;
+
+             const amountBurnValue=await window.web3.utils.toWei(amountBurn,'ether');
+
+             await contractToken.methods.burnTokens(OwnerAddress,amountBurnValue)
+             .send({from:OwnerAddress})
+             .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p> It has been burned <code>'+amountBurn+'</code> tokens . </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-burn\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-burn').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng , Make sure that you are the owner and carry enough credit .<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-burn\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-burn').innerHTML=html;
+             })
+           })
+
+
+           // change price
+           document.getElementById('changePriceMethod').addEventListener('click',async()=>{
+             const priceBnb=document.getElementById('priceBnb').value;
+             if(priceBnb==='' || priceBnb <=0) return;
+             const priceBnbValue=await window.web3.utils.toWei(priceBnb,'ether');
+
+             await contractPool.methods.setRate(priceBnbValue)
+             .send({from:OwnerAddress})
+             .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p> The price has been successfully upadted . <br> Current price <code>'+priceBnb+'</code> </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-price\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-price').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng , Make sure that you are the owner and carry enough credit .<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-price\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-price').innerHTML=html;
+             })
+
+           });
+
+           // Transfer the Token to a specific address
+           document.getElementById('transferAddressMethod').addEventListener('click',async()=>{
+              const addressSpecific=document.getElementById('addressSpecific').value;
+              const balanceGoat=document.getElementById('balanceGoat').value;
+             if(addressSpecific==='' || balanceGoat==='' || balanceGoat <=0) return;
+
+              const balanceGoatValue=await window.web3.utils.toWei(balanceGoat,'ether');
+
+              await contractPool.methods.withdraw(addressSpecific,balanceGoatValue)
+              .send({from:OwnerAddress})
+              .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p style="min-width:50%;word-wrap: break-word;">The process of transferring <code>'+balanceGoat+'</code> to an account <br> <code>'+addressSpecific+'</code> <br> succeeded . </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-transfer\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-transfer').innerHTML=html;
+                })
+                .catch((error)=>{
+                  let html="";
+                    html+='<div class="alert alert-danger">';
+                      html+='<p> Worng , Make sure that you are the owner and carry enough credit . <br>'+error+' </p>';
+                      html+='<button onclick="alertClosed(\'areaAlert-transfer\')">X</button>';
+                      html+='</div>' ; 
+                  document.querySelector('.areaAlert-transfer').innerHTML=html;
+                })
+           });
+
+
+           // withdraw BNB amounts
+           document.getElementById('btn-withdraw').addEventListener('click',async()=>{
+            await contractPool.methods.withDrawBNB()
+            .send({from:OwnerAddress})
+            .then(()=>{
+              let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p> All balance has been transferred to the Owner\'s account . </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-withdraw\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-withdraw').innerHTML=html;
+            })
+            .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng ,<br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-withdraw\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-withdraw').innerHTML=html;
+            })
+           });
+
+
+           // getAccountPurchasesMethod
+           document.getElementById('getAccountPurchasesMethod').addEventListener('click',async()=>{
+            const accountPurchases=document.getElementById('accountPurch').value;
+            if(accountPurchases ==='') return;
+            const purchased=await contractPool.methods.purchasedTokens(accountPurchases).call();
+            const purchasedValue=window.web3.utils.fromWei(purchased,'ether');
+
+            document.getElementById('purchasedValue').innerHTML=purchasedValue + " GOAT";
+            console.log(purchased);
+           });
+
+           //toggle Sale status 
+           document.getElementById('btn-toggleSaleStatus').addEventListener('click',async()=>{
+            await contractPool.methods.toggleSaleStatus()
+            .send({from:OwnerAddress})
+            .then(()=>{
+                let html="";
+                html+='<div class="alert alert-success ">';
+                  html+='<p> The process has been successfully .</p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-toggleSaleStatus\')">X</button>';
+                  html+='</div>' ;  
+                  document.querySelector('.areaAlert-toggleSaleStatus').innerHTML=html;
+             })
+             .catch((error)=>{
+              let html="";
+                html+='<div class="alert alert-danger">';
+                  html+='<p> Worng <br>'+error+'  </p>';
+                  html+='<button onclick="alertClosed(\'areaAlert-toggleSaleStatus\')">X</button>';
+                  html+='</div>' ; 
+              document.querySelector('.areaAlert-toggleSaleStatus').innerHTML=html;
+             })
+           });
+
+
+
+           // getPurchased
+           document.getElementById('btn-refresh').addEventListener('click',async()=>{
+            const table=document.getElementById('table-purchases');
+            const purchasedAccounts=await contractPool.methods.getPurchased()
+            .call().then(data=>{
+            // console.log('data',data);// data = object
+            // console.log('value',data[0]); // data[0] = array
+            // console.log('account',data[1]);
+
+            let html='';
+            if(data[0].length >0){
+              for(let i=0;i<data[0].length;i++){
+                let balanceValue= window.web3.utils.fromWei(data[0][i],'ether');
+                 html+='<tr>';
+                 html+='<td style="max-width: 250px;word-wrap: break-word;">'+data[1][i]+'</td>';
+                  html+='<td>'+balanceValue+'</td>';
+                html+='</tr>';
+              }
+             
+              }
+              table.innerHTML=html;
+            }).catch(error=>{
+              table.innerHTML=error;
+            });
+           });
+           
+         /// -------------------------------///
+           //   ----  buy actions  ----//
+         const buyActions=()=>{
+              const BNB=document.getElementById('BNBCoin');
+              const GOAT=document.getElementById('GOATCoin');
+              const btnBuy=document.getElementById('btnBuy');  
+              // BNB input change
+              BNB.addEventListener('input',(e)=>{
+                let BNBValue=e.target.value;
+                console.log(BNBValue);
+
+                let ratePrice= BNBValue / rateValue ;
+                if(ratePrice < 0) return;
+
+                console.log(ratePrice);
+                GOAT.value=ratePrice;
+
+                if(ratePrice > AllowncCountValue ){
+                  GOAT.style.color='red';
+                }else{
+                  GOAT.style.color='#ccc';
+                  
+                }
+
+                if(BNBValue ==="") GOAT.value="";
+
+              });
+              
+              // GOAT input change
+              GOAT.addEventListener('input',(e)=>{
+                let GOATValue=e.target.value;
+                console.log(GOATValue);
+
+                let ratePrice= GOATValue * rateValue;
+                if(ratePrice < 0) return;
+
+                console.log(ratePrice);
+                BNB.value=ratePrice;
+
+                if(GOATValue > AllowncCountValue ){
+                  GOAT.style.color='red';
+                }else{
+                  GOAT.style.color='#ccc';                  
+                }
+
+                if(GOATValue ==="") BNB.value="";
+
+              });
+              
+              // btnBuy
+              btnBuy.addEventListener('click',async()=>{
+                if(BNB.value==='' || GOAT.value==='') return;
+
+          
+                 const SaleActive=await contractPool.methods.isSaleActive().call();
+                 console.log(SaleActive);
+                 if(SaleActive===false){
+                  let html="";
+                    html+='<div class="alert alert-danger">';
+                      html+='<p> The purchase is closed at the moment.  </p>';
+                      html+='<button onclick="alertClosed(\'areaAlert-coinBuy\')">X</button>';
+                      html+='</div>' ; 
+                  document.querySelector('.areaAlert-coinBuy').innerHTML=html;
+                  return;
+                 }
+                 const BNBCoinValue=await window.web3.utils.toWei(BNB.value,'ether');
+                 await contractPool.methods.buyTokens()
+                 .send({from:currentAccount,value:BNBCoinValue})
+                 .then(()=>{
+                  let html="";
+                  html+='<div class="alert alert-success ">';
+                    html+='<p style="min-width:50%;word-wrap: break-word;"> This account <code>'+currentAccount+'</code> <br> purchased <code>'+GOAT.value+' GOAT</code> for  <code>'+BNB.value+' BNB</code>.  </p>';
+                    html+='<button onclick="alertClosed(\'areaAlert-coinBuy\')">X</button>';
+                    html+='</div>' ;  
+                    document.querySelector('.areaAlert-coinBuy').innerHTML=html;
+                 })
+                .catch(()=>{
+                  let html="";
+                    html+='<div class="alert alert-danger">';
+                      html+='<p> Worng , Pay the amount corresponding to the current currency (BNB --- GOAT).  </p>';
+                      html+='<button onclick="alertClosed(\'areaAlert-coinBuy\')">X</button>';
+                      html+='</div>' ; 
+                  document.querySelector('.areaAlert-coinBuy').innerHTML=html;
+                });
+              })
+         }
+          
+         buyActions();
+
+
+         /// -------------------------------///
+
+        }
+
+
+
+        // get abi
+
+        // get abi Token contract
+        const getAbiTokensContract=async()=>{
+          const Response=await fetch('build/contracts/Token.json');
+
+          if(!Response.ok){
+            throw new Error('Falied to fetch abi , status'+Respones.status);
+          }
+          const data=await Response.json();
+          return data.abi;
+        } 
+       // get abi Pool contract 
+        const getAbiPoolContract=async()=>{
+          const Response=await fetch('build/contracts/Pool.json');
+
+          if(!Response.ok){
+            throw new Error('Falied to fetch abi , status'+Respones.status);
+          }
+          const data=await Response.json();
+          return data.abi;
+        } 
+
+
+        connectMetamask();
+        connectContracts();
+ 
+      
+        document.getElementById('connectMetamaskMethod').addEventListener('click', connectMetamask);
+
+   });
+  
+
+   const alertClosed=function(className){
+    document.querySelector('.'+className+'').innerHTML="";
+  }
+
+        
+   
+
+
+
+
+
+
+
+    // send accounts and status connect to index.js (server node)
+                // fetch('/data',
+                // {
+                //   method:'POST',
+                //   headers:{'Content-Type':'application/json'},
+                //   body:JSON.stringify({
+                //     'DATA':account,
+                //     'Status':'Metamask Connect',
+
+                //   })
+
+                // }).then(response=>response.json())
+                // .then(data=>{
+                //    console.log(data);
+                // }).catch(error=>console.error(error));
+
+    //  connectMetamask();
+  //  })
+ </script>
+
+</body>
+</html>
+
+
+
